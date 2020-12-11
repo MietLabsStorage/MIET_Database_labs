@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDA0409E-EA87-49F2-96EA-6689ED0B1CA8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BD</RootNamespace>
+    <AssemblyName>BD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddForms\AddOrUpdateInCathedraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateInCathedraForm.Designer.cs">
+      <DependentUpon>AddOrUpdateInCathedraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateInGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateInGroupForm.Designer.cs">
+      <DependentUpon>AddOrUpdateInGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateInStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateInStudent.Designer.cs">
+      <DependentUpon>AddOrUpdateInStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateMarksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateMarksForm.Designer.cs">
+      <DependentUpon>AddOrUpdateMarksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateSemestrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateSemestrForm.Designer.cs">
+      <DependentUpon>AddOrUpdateSemestrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOrUpdateSubjectForm.Designer.cs">
+      <DependentUpon>AddOrUpdateSubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BdClasses\Group.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DeleteForms\DelInCathedraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInCathedraForm.Designer.cs">
+      <DependentUpon>DelInCathedraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DelInGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInGroupForm.Designer.cs">
+      <DependentUpon>DelInGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DelInMarksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInMarksForm.Designer.cs">
+      <DependentUpon>DelInMarksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSemestrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSemestrForm.Designer.cs">
+      <DependentUpon>DelInSemestrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSubjectForm.Designer.cs">
+      <DependentUpon>DelInSubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteForms\DelInSudentForm.Designer.cs">
+      <DependentUpon>DelInSudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExceptionMes.Designer.cs">
+      <DependentUpon>ExceptionMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueriesForms\GroupsFromCath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForms\GroupsFromCath.Designer.cs">
+      <DependentUpon>GroupsFromCath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueriesForms\StudsFromCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForms\StudsFromCity.Designer.cs">
+      <DependentUpon>StudsFromCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueriesForms\SubjWithMoreHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForms\SubjWithMoreHours.Designer.cs">
+      <DependentUpon>SubjWithMoreHours.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddForms\AddOrUpdateInCathedraForm.resx">
+      <DependentUpon>AddOrUpdateInCathedraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOrUpdateInGroupForm.resx">
+      <DependentUpon>AddOrUpdateInGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOrUpdateInStudent.resx">
+      <DependentUpon>AddOrUpdateInStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOrUpdateMarksForm.resx">
+      <DependentUpon>AddOrUpdateMarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOrUpdateSemestrForm.resx">
+      <DependentUpon>AddOrUpdateSemestrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOrUpdateSubjectForm.resx">
+      <DependentUpon>AddOrUpdateSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInCathedraForm.resx">
+      <DependentUpon>DelInCathedraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInGroupForm.resx">
+      <DependentUpon>DelInGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInMarksForm.resx">
+      <DependentUpon>DelInMarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInSemestrForm.resx">
+      <DependentUpon>DelInSemestrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInSubjectForm.resx">
+      <DependentUpon>DelInSubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteForms\DelInSudentForm.resx">
+      <DependentUpon>DelInSudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionMes.resx">
+      <DependentUpon>ExceptionMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QueriesForms\GroupsFromCath.resx">
+      <DependentUpon>GroupsFromCath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueriesForms\StudsFromCity.resx">
+      <DependentUpon>StudsFromCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueriesForms\SubjWithMoreHours.resx">
+      <DependentUpon>SubjWithMoreHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
