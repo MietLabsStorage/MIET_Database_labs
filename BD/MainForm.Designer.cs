@@ -109,6 +109,9 @@ namespace BD
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
@@ -116,6 +119,7 @@ namespace BD
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(452, 334);
             this.listBox1.TabIndex = 7;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -128,6 +132,7 @@ namespace BD
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Location = new System.Drawing.Point(650, 40);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 23);
@@ -138,6 +143,7 @@ namespace BD
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Location = new System.Drawing.Point(650, 70);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 23);
@@ -148,6 +154,7 @@ namespace BD
             // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.Location = new System.Drawing.Point(650, 100);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 23);
@@ -158,6 +165,7 @@ namespace BD
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Location = new System.Drawing.Point(650, 130);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(100, 23);
@@ -168,6 +176,7 @@ namespace BD
             // 
             // button9
             // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.Location = new System.Drawing.Point(650, 160);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 23);
@@ -178,6 +187,7 @@ namespace BD
             // 
             // button10
             // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button10.Location = new System.Drawing.Point(650, 190);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(100, 23);
@@ -188,6 +198,7 @@ namespace BD
             // 
             // button11
             // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.Location = new System.Drawing.Point(650, 220);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(100, 23);
@@ -198,6 +209,7 @@ namespace BD
             // 
             // button12
             // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button12.Location = new System.Drawing.Point(650, 250);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(100, 23);
@@ -208,6 +220,7 @@ namespace BD
             // 
             // button13
             // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button13.Location = new System.Drawing.Point(650, 280);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(100, 23);
@@ -218,6 +231,7 @@ namespace BD
             // 
             // button14
             // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button14.Location = new System.Drawing.Point(650, 325);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 23);
@@ -257,6 +271,7 @@ namespace BD
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(650, 20);
             this.label4.Name = "label4";

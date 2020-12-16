@@ -14,10 +14,8 @@ namespace BD.QueriesForms
     public partial class SubjWithMoreHours : Form
     {
         private OleDbConnection cn;
-        public delegate void fun(OleDbCommand cmd);
-        private fun showFun;
-        public delegate void fun1(string isSucces);
-        private fun1 qFun;
+        private Database.fun3 showFun;
+        private Database.fun1 qFun;
 
         /// <summary>
         /// 
@@ -26,7 +24,7 @@ namespace BD.QueriesForms
         /// <param name="isAdd">true if add, false if update</param>
         /// <param name="showFun">обновлять Listbox</param>
         /// <param name="qFun">вызывается при ошибке</param>
-        public SubjWithMoreHours(OleDbConnection _cn, fun showFun, fun1 qFun)
+        public SubjWithMoreHours(OleDbConnection _cn, Database.fun3 showFun, Database.fun1 qFun)
         {
             InitializeComponent();
             this.showFun += showFun;
@@ -37,25 +35,14 @@ namespace BD.QueriesForms
 
         private void Query(object sender, EventArgs e)
         {
-            cn.Open();
-            OleDbCommand cmd = new OleDbCommand();
             try
             {
-
-                cmd.Connection = cn;
-                cmd.Parameters.AddWithValue("[Кол-во часов]", textBox1.Text);
-                cmd.CommandText = "SELECT * FROM ПредметыБольшеСтолькиЧасов";
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                this.showFun(cmd);
-                this.qFun(" ");
+                Database.QueriesWithParams(showFun, qFun, 2, textBox1.Text);
                 this.Close();
             }
             catch (Exception ex)
             {
-                cn.Close();
                 this.qFun(ex.ToString());
-                this.Close();
             }
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace BD.DeleteForms
 {
-    partial class DelInMarksForm
+    partial class DelMarksForm
     {
         /// <summary>
         /// Required designer variable.

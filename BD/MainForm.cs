@@ -28,6 +28,13 @@ namespace BD
             button2.Click += AddInTable;
             button3.Click += DeleteInTable;
             button4.Click += UpdateInTable;
+
+            /*label1.Location = new Point(label1.Location.X, label1.Location.Y + 70);
+            textBoxTable.Location = new Point(textBoxTable.Location.X, textBoxTable.Location.Y + 70);
+            button1.Location = new Point(button1.Location.X, button1.Location.Y + 70);
+            button2.Location = new Point(button2.Location.X, button2.Location.Y + 70);
+            button3.Location = new Point(button3.Location.X, button3.Location.Y + 70);
+            button4.Location = new Point(button4.Location.X, button4.Location.Y + 70);*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -81,8 +88,6 @@ namespace BD
             }
             return res;
         }
-
-   
 
         /// <summary>
         /// Метод не прописан!!!
@@ -149,16 +154,16 @@ namespace BD
                     new DelInGroupForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
                     break;
                 case "Предмет":
-                    new DelInSubjectForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
+                    new DelSubjectForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
                     break;
                 case "Семестр":
-                    new DelInSemestrForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
+                    new DelSemestrForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
                     break;
                 case "Студент":
-                    new DelInSudentForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
+                    new DelInStudentForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
                     break;
                 case "Текущая_успеваемость":
-                    new DelInMarksForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
+                    new DelMarksForm(Database.Cn, delegate () { ShowTable(sender, e); }, delegate (string str) { QueryException(str); }).Show();
                     break;
             }
         }
@@ -200,10 +205,13 @@ namespace BD
         /// <param name="e"></param>
         private void QueryShow1(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (String i in Database.GetTableContents(Database.SelectQuery("6QL_Старосты"), LevelOffTable))
-                listBox1.Items.Add(i);
-
+            Database.QueriesWithoutParams(
+                delegate (List<string> str)
+                {
+                    listBox1.Items.Clear();
+                    foreach (String i in str)
+                        listBox1.Items.Add(i);
+                }, delegate (string str) { QueryException(str); }, 0, LevelOffTable);
         }
 
         /// <summary>
@@ -213,10 +221,13 @@ namespace BD
         /// <param name="e"></param>
         private void QueryShow2(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (String i in Database.GetTableContents(Database.SelectQuery("УспеваемостьПИН-34"), LevelOffTable))
-                listBox1.Items.Add(i);
- 
+            Database.QueriesWithoutParams(
+               delegate (List<string> str)
+               {
+                   listBox1.Items.Clear();
+                   foreach (String i in str)
+                       listBox1.Items.Add(i);
+               }, delegate (string str) { QueryException(str); }, 1, LevelOffTable);
         }
 
         /// <summary>
@@ -226,10 +237,13 @@ namespace BD
         /// <param name="e"></param>
         private void QueryShow3(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (String i in Database.GetTableContents(Database.SelectQuery("SQL_студентыИИхКафедры"), LevelOffTable))
-                listBox1.Items.Add(i);
- 
+            Database.QueriesWithoutParams(
+               delegate (List<string> str)
+               {
+                   listBox1.Items.Clear();
+                   foreach (String i in str)
+                       listBox1.Items.Add(i);
+               }, delegate (string str) { QueryException(str); }, 2, LevelOffTable);
         }
 
         /// <summary>
@@ -284,21 +298,16 @@ namespace BD
         /// <param name="e"></param>
         private void QueryUpdate(object sender, EventArgs e)
         {
-            Database.Cn.Open();
+
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = Database.Cn;
                 textBoxTable.Text = "Предмет";
-                cmd.CommandText = "EXEC 6QL_обновПредмет";
-                cmd.ExecuteNonQuery();
-                Database.Cn.Close();
+                Database.QueriesOther(delegate (string str) { QueryException(str); }, 0);
                 ShowTable(sender, e);
             }
             catch (Exception ex)
             {
-                QueryException(ex.ToString());
-                Database.Cn.Close();
+                QueryException(ex.Message);
             }
         }
 
@@ -309,22 +318,15 @@ namespace BD
         /// <param name="e"></param>
         private void QueryAdd(object sender, EventArgs e)
         {
-            Database.Cn.Open();
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = Database.Cn;
                 textBoxTable.Text = "Студент";
-                cmd.CommandText = "EXEC 6QL_добСтудент";
-                cmd.ExecuteNonQuery();
-                Database.Cn.Close();
+                Database.QueriesOther(delegate (string str) { QueryException(str); }, 1);
                 ShowTable(sender, e);
-                
             }
             catch (Exception ex)
             {
-                QueryException(ex.ToString());
-                Database.Cn.Close();
+                QueryException(ex.Message);
             }
 
         }
@@ -336,22 +338,15 @@ namespace BD
         /// <param name="e"></param>
         private void QueryDel(object sender, EventArgs e)
         {
-            Database.Cn.Open();
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = Database.Cn;
                 textBoxTable.Text = "Студент";
-                cmd.CommandText = "EXEC 6QL_удСтудент";
-                cmd.ExecuteNonQuery();
-                Database.Cn.Close();
+                Database.QueriesOther(delegate (string str) { QueryException(str); }, 2);
                 ShowTable(sender, e);
-
             }
             catch (Exception ex)
             {
-                QueryException(ex.ToString());
-                Database.Cn.Close();
+                QueryException(ex.Message);
             }
         }
 
@@ -377,6 +372,11 @@ namespace BD
             listBox1.Items.Clear();
             foreach (String i in Database.GetTableContents(textBoxQuery.Text, LevelOffTable))
                 listBox1.Items.Add(i);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,18 +14,15 @@ namespace BD.DeleteForms
     public partial class DelInCathedraForm : Form
     {
         OleDbConnection cn;
-        public delegate void fun();
-        private fun showFun;
-        public delegate void fun1(string isSucces);
-        private fun1 qFun;
-
+        private Database.fun showFun;
+        private Database.fun1 qFun;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_cn"></param>
         /// <param name="showFun">для вывода в listbox</param>
         /// <param name="qFun">для вывода при ошибке</param>
-        public DelInCathedraForm(OleDbConnection _cn, fun showFun, fun1 qFun)
+        public DelInCathedraForm(OleDbConnection _cn, Database.fun showFun, Database.fun1 qFun)
         {
             InitializeComponent();
             this.showFun += showFun;
@@ -36,24 +33,14 @@ namespace BD.DeleteForms
 
         private void Delete(object sender, EventArgs e)
         {
-            cn.Open();
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "DELETE FROM [Выпускающая кафедра] WHERE [Идентификатор_кафедры]=@ID";
-                cmd.Parameters.AddWithValue("@ID", textBox1.Text);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                this.showFun();
-                this.qFun(" ");
+                Database.Delete(showFun, qFun, 0, textBox1.Text);
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                cn.Close();
-                this.qFun(ex.ToString());
-                this.Close();
+                qFun(ex.Message);
             }
 
         }

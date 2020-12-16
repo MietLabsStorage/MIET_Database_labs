@@ -15,11 +15,8 @@ namespace BD
         public ExceptionMes(string mes)
         {
             InitializeComponent();
-            for(int i = 0; i<mes.Length/48; i++)
-            {
-                listBox1.Items.Add(mes.Substring(i*48, 48));
-            }
-            
+            textBox1.Multiline = true;
+            textBox1.Text = mes;
         }
     }
 }

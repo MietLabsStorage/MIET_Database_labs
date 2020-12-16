@@ -14,10 +14,8 @@ namespace BD
     public partial class AddOrUpdateInCathedraForm : Form
     {
         private OleDbConnection cn;
-        public delegate void fun();
-        private fun showFun;
-        public delegate void fun1(string isSucces);
-        private fun1 qFun;
+        private Database.fun showFun;
+        private Database.fun1 qFun;
         private bool isAdd;
         /// <summary>
         /// 
@@ -26,7 +24,7 @@ namespace BD
         /// <param name="isAdd">true if add, false if update</param>
         /// <param name="showFun">обновлять Listbox</param>
         /// <param name="qFun">вызывается при ошибке</param>
-        public AddOrUpdateInCathedraForm(OleDbConnection _cn, bool isAdd, fun showFun, fun1 qFun)
+        public AddOrUpdateInCathedraForm(OleDbConnection _cn, bool isAdd, Database.fun showFun, Database.fun1 qFun)
         {
             InitializeComponent();
             this.showFun += showFun;
@@ -43,42 +41,21 @@ namespace BD
 
         public void Add(object sender, EventArgs e)
         {
-            cn.Open();
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = cn;
                 if (isAdd)
                 {
-                    cmd.CommandText = "INSERT INTO [Выпускающая кафедра] VALUES (@ID, @FullName, @ShortName, @Decan)";
-
-                    cmd.Parameters.AddWithValue("@ID", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@FullName", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@ShortName", textBox3.Text);
-                    cmd.Parameters.AddWithValue("@Decan", textBox4.Text);
+                    Database.Add(showFun, qFun, 0, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                 }
                 else
                 {
-                    cmd.CommandText = "UPDATE [Выпускающая кафедра] SET " +
-                        "Полное_название = @FullName, Короткое_название = @ShortName, Декан = @Decan " +
-                        "WHERE Идентификатор_кафедры = @ID";
-                    cmd.Parameters.AddWithValue("@FullName", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@ShortName", textBox3.Text);
-                    cmd.Parameters.AddWithValue("@Decan", textBox4.Text);
-                    cmd.Parameters.AddWithValue("@ID", textBox1.Text);
-
+                    Database.Update(showFun, qFun, 0, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                 }
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                this.showFun();
-                this.qFun(" ");
                 this.Close();
             }
             catch (Exception ex)
             {
-                cn.Close();
-                this.qFun(ex.ToString());
-                this.Close();
+                qFun(ex.Message);
             }
 
         }

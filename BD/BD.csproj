@@ -97,29 +97,29 @@
     <Compile Include="DeleteForms\DelInGroupForm.Designer.cs">
       <DependentUpon>DelInGroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteForms\DelInMarksForm.cs">
+    <Compile Include="DeleteForms\DelMarksForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteForms\DelInMarksForm.Designer.cs">
-      <DependentUpon>DelInMarksForm.cs</DependentUpon>
+    <Compile Include="DeleteForms\DelMarksForm.Designer.cs">
+      <DependentUpon>DelMarksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteForms\DelInSemestrForm.cs">
+    <Compile Include="DeleteForms\DelSemestrForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteForms\DelInSemestrForm.Designer.cs">
-      <DependentUpon>DelInSemestrForm.cs</DependentUpon>
+    <Compile Include="DeleteForms\DelSemestrForm.Designer.cs">
+      <DependentUpon>DelSemestrForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteForms\DelInSubjectForm.cs">
+    <Compile Include="DeleteForms\DelSubjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteForms\DelInSubjectForm.Designer.cs">
-      <DependentUpon>DelInSubjectForm.cs</DependentUpon>
+    <Compile Include="DeleteForms\DelSubjectForm.Designer.cs">
+      <DependentUpon>DelSubjectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeleteForms\DelInSudentForm.cs">
+    <Compile Include="DeleteForms\DelInStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteForms\DelInSudentForm.Designer.cs">
-      <DependentUpon>DelInSudentForm.cs</DependentUpon>
+    <Compile Include="DeleteForms\DelInStudentForm.Designer.cs">
+      <DependentUpon>DelInStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ExceptionMes.cs">
       <SubType>Form</SubType>
@@ -177,17 +177,17 @@
     <EmbeddedResource Include="DeleteForms\DelInGroupForm.resx">
       <DependentUpon>DelInGroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteForms\DelInMarksForm.resx">
-      <DependentUpon>DelInMarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteForms\DelMarksForm.resx">
+      <DependentUpon>DelMarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteForms\DelInSemestrForm.resx">
-      <DependentUpon>DelInSemestrForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteForms\DelSemestrForm.resx">
+      <DependentUpon>DelSemestrForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteForms\DelInSubjectForm.resx">
-      <DependentUpon>DelInSubjectForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteForms\DelSubjectForm.resx">
+      <DependentUpon>DelSubjectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteForms\DelInSudentForm.resx">
-      <DependentUpon>DelInSudentForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteForms\DelInStudentForm.resx">
+      <DependentUpon>DelInStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExceptionMes.resx">
       <DependentUpon>ExceptionMes.cs</DependentUpon>

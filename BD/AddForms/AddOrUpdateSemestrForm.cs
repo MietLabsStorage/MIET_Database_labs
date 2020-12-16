@@ -14,10 +14,8 @@ namespace BD.AddForms
     public partial class AddOrUpdateSemestrForm : Form
     {
         private OleDbConnection cn;
-        public delegate void fun();
-        private fun showFun;
-        public delegate void fun1(string isSucces);
-        private fun1 qFun;
+        private Database.fun showFun;
+        private Database.fun1 qFun;
         private bool isAdd;
         /// <summary>
         /// 
@@ -26,7 +24,7 @@ namespace BD.AddForms
         /// <param name="isAdd">true if add, false if update</param>
         /// <param name="showFun">обновлять Listbox</param>
         /// <param name="qFun">вызывается при ошибке</param>
-        public AddOrUpdateSemestrForm(OleDbConnection _cn, bool isAdd, fun showFun, fun1 qFun)
+        public AddOrUpdateSemestrForm(OleDbConnection _cn, bool isAdd, Database.fun showFun, Database.fun1 qFun)
         {
             InitializeComponent();
             this.showFun += showFun;
@@ -43,43 +41,21 @@ namespace BD.AddForms
 
         public void Add(object sender, EventArgs e)
         {
-            cn.Open();
             try
             {
-                OleDbCommand cmd = new OleDbCommand();
-                cmd.Connection = cn;
                 if (isAdd)
                 {
-                    cmd.CommandText =
-                    "INSERT INTO [Семестр] VALUES (@ID, @Begin, @End, @Time)";
-
-                    cmd.Parameters.AddWithValue("@ID", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@Begin", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@End", textBox3.Text);
-                    cmd.Parameters.AddWithValue("@Time", textBox4.Text);
+                    Database.Add(showFun, qFun, 4, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                 }
                 else
                 {
-                    cmd.CommandText = "UPDATE Семестр SET " +
-                        "Начало = @Begin, Конец = @End, Количество_недель = @Time" +
-                        "WHERE Номер_семестра LIKE @ID";
-                    cmd.Parameters.AddWithValue("@Begin", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@End", textBox3.Text);
-                    cmd.Parameters.AddWithValue("@Time", textBox4.Text);
-                    cmd.Parameters.AddWithValue("@ID", textBox1.Text);
-
+                    Database.Update(showFun, qFun, 4, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                 }
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                this.showFun();
-                this.qFun(" ");
                 this.Close();
             }
             catch (Exception ex)
             {
-                cn.Close();
-                this.qFun(ex.ToString());
-                this.Close();
+                qFun(ex.Message);
             }
 
         }

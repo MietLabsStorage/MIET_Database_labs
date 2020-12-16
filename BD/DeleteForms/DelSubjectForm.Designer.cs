@@ -1,6 +1,6 @@
 ﻿namespace BD.DeleteForms
 {
-    partial class DelInSemestrForm
+    partial class DelSubjectForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(40, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Номер семестра";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(40, 80);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 30);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Удалить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // DelInSemestrForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Идентификатор предмета";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(40, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // DelInSubjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 161);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "DelInSemestrForm";
-            this.Text = "Удалить в Семестр";
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Name = "DelInSubjectForm";
+            this.Text = "Удалить в Предмет";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,8 +75,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

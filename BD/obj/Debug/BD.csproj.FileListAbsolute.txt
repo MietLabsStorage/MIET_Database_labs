@@ -10,11 +10,7 @@ C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.pdb
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.MainForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInCathedraForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInGroupForm.resources
-C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInSemestrForm.resources
-C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInSubjectForm.resources
-C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInSudentForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.AddForms.AddOrUpdateInGroupForm.resources
-C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInMarksForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.AddForms.AddOrUpdateSubjectForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.AddForms.AddOrUpdateSemestrForm.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.AddForms.AddOrUpdateInStudent.resources
@@ -24,3 +20,7 @@ C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.QueriesForms.StudsFromCity.resour
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.QueriesForms.GroupsFromCath.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.QueriesForms.SubjWithMoreHours.resources
 C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.ExceptionMes.resources
+C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelMarksForm.resources
+C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelSemestrForm.resources
+C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelSubjectForm.resources
+C:\Users\maksi\source\repos\BD\BD\obj\Debug\BD.DeleteForms.DelInStudentForm.resources
